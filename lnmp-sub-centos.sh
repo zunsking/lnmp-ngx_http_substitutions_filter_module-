@@ -47,6 +47,7 @@ echo "Install fail2ban..."
 cd tools
 . fail2ban.sh
 sleep 3s
+cd
 #ufw
 echo "Install ufw..."
 yum install ufw -y
@@ -63,3 +64,4 @@ ufw status verbose
 echo "deny ip:80..."
 sed -i "s:server_name _;:server_name _;\n return 444;:" /usr/local/nginx/conf/nginx.conf
 lnmp nginx restart
+rm -rf *
