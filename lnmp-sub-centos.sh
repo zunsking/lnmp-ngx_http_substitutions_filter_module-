@@ -42,10 +42,23 @@ else
     echo "Install canceled."
     exit
 fi
-#install fail2ban
-echo "install fail2ban..."
+#Install fail2ban
+echo "Install fail2ban..."
 cd tools
 . fail2ban.sh
+sleep 3s
+#ufw
+echo "Install ufw..."
+yum install ufw -y
+#Default set: deny all IN and allow all OUT
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+ufw allow 80
+#Enable ufw
+ufw --force enable
+#Status checking
+ufw status verbose
 #deny ip:80
 echo "deny ip:80..."
 sed -i "s:server_name _;:server_name _;\n return 444;:" /usr/local/nginx/conf/nginx.conf
