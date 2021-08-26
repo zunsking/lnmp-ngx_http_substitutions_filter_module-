@@ -61,7 +61,7 @@ ufw --force enable
 #Status checking
 ufw status verbose
 #crontab
-rM=$(($RANDOM%60))
+rM=$(($RANDOM%59))
 rH=$(($RANDOM%12))
 echo '#/etc/init.d/cron restart' >> /var/spool/cron/crontabs/root
 echo $[rM] $[rH]  "* * * reboot" >> /var/spool/cron/crontabs/root && /etc/init.d/cron restart
