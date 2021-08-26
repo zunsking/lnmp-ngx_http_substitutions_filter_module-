@@ -12,7 +12,7 @@ git clone git://github.com/openresty/headers-more-nginx-module.git
 cd
 wget https://raw.githubusercontent.com/zunsking/lnmp-add-module/master/bakup/backup.sh
 #wget https://raw.githubusercontent.com/zunsking/lnmp-add-module/master/fail2ban.sh
-wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz && tar zxf lnmp1.8.tar.gz
+wget http://soft6.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz && tar zxf lnmp1.8.tar.gz
 cd lnmp1.8/tools
 sed -i 's#maxretry = 5#maxretry = 2#g' fail2ban.sh
 cd ..
